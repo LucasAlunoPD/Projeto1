@@ -1,0 +1,488 @@
+
+
+/* Esta parte é a parte total onde estilizo a fonte , cor da fonte e cor de fundo da pagina*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #ececec;
+}
+
+/* Esta parte é do cabeçalho */
+
+.header {
+    background-color: #222;  /* cor do fundo */
+    color: #fff;             /* cor do texto*/
+    padding: 1rem 0;           /* espaçamento interno*/
+    position: sticky;         /* Cabeçalho gruda e faz rolar junto para baixo da pagina*/
+    top: 0;  
+    z-index: 1000;             /* Garante que cabeçalho fique sobre elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);         /* adiciona sombra leve abaixo*/ 
+}
+
+
+/*  Esta parte é o contanier inicial */
+
+.container {
+    display: flex;                              /* alinha os elementos com flaxbox*/
+    justify-content: space-between;             /*  espaça elementos um em cada extremidades*/
+    align-items: center;                         /* Centraliza itens verticalmente  */
+    max-width: 1200px;                            /* Denife a largura maxima*/
+    margin: 0 auto;                                 /*   centraliza contanier horizontalmente */
+    padding: 0 1rem;                                 /* espaçamento entre itens */
+}
+
+/*  estilização do logo nome da empresa */
+
+
+#logo {
+    background-image: url('logo.jpg'); /* Adiciona a imagem como fundo */
+    background-size: contain; /* Ajusta o tamanho proporcional */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-position: center; /* Centraliza a imagem */
+    width: 150px; /* Ajuste a largura conforme necessário */
+    height: 50px; /* Ajuste a altura conforme necessário */
+    text-indent: -9999px; /* Esconde o texto, se ainda estiver lá */
+    overflow: hidden; /* Garante que nada extra apareça */
+}
+
+
+/* Estilização dos links botoes clicaveis */
+
+.navigation ul {
+    list-style: none;          /* remove marcadores da lista  */
+    display: flex;           /* alinha horizontal*/
+    gap: 1.5rem;                /* espaço  */
+}
+
+.navigation a {
+    color: #fff;                      /* cor branca dos links */
+    text-decoration: none;                 /* remove sublinhado */
+    font-weight: 500;                        
+    transition: color 0.3s ease;               /* Suaviza transição de cor ao passar mouse */ 
+} 
+
+.navigation a:hover {
+    color: #f7c200;                                 /* Muda fonte de cor ao passar mouse sob link */
+}
+
+
+/* Seção de destaque com frase inicial*/ 
+
+.hero {
+    background: linear-gradient(135deg, #f7c200, #f04e23);              /* Aplica um degrade de fundo que vai do amarelo ao laranja */
+    color: #fff;                                                             /* cor do texto */
+    text-align: center;                                                          /* centraliza o texto  */
+    padding: 6rem 1rem;                                                              /* espaçamento */
+    position: relative;                                                                  /* Permite posicionar elementos  */
+    overflow: hidden;                                                                       /* oculta conteudos que saem para fora do elemento */
+    flex-direction: row;
+}
+
+
+/* A função de herobefore é para adicionar uma imagem de fundo que fique um pouco transparente e atrás de todos elementos*/
+/* No momento ainda não deixei nenhuma imagem , pois preferi sem , mas vou deixar digializado aqui no css para caso mude de opinião*/
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('material.png') no-repeat center center/cover;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;                       /* permitindo o uso de top, left, etc */
+    z-index: 1;                                 /* Define a ordem de empilhamento. Este elemento será exibido acima de outros com menor z-index */
+    max-width: 800px;                             /* Limita a largura máxima */
+    margin: 0 auto;                                 /* Centraliza horizontalmente o elemento */
+    flex-direction: row;                             /* Em um contexto flexbox, organiza os itens filhos em linha (da esquerda para a direita) */
+}
+
+/*flex-grow
+Define a proporção de crescimento dos elementos em um container flexível.
+.hero-container1 e .hero-container2 crescem igualmente (1 unidade).
+.hero-content cresce mais (4 unidades), ocupando mais espaço disponível*/
+
+.hero-container1{
+flex-grow: 1;
+}
+
+.hero-content{
+    flex-grow: 4;
+}
+
+.hero-container2{
+    flex-grow: 1;
+}
+
+
+
+
+/* configuração do texto , tamanho e espaçamento */
+
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* botão solicite um orçamento */ 
+
+.cta {
+    display: inline-block;               /* Permite tratar o botão como bloco, mas mantendo-o em linha com outros elementos.*/
+    background-color: #222;                 /* Define a cor de fundo do texto */
+    color: #fff;                                 /* cor de fundo */
+    padding: 0.8rem 1.5rem;                         /* espaçamento interno */
+    margin-top: 1rem;                                      /* espaãmento acima do botão */
+    text-decoration: none;                                    /* Remove os sublinhados dos links*/
+    font-weight: bold;                                       /*   Cria bordas arredondadas */          
+    border-radius: 5px;                                             
+    transition: background-color 0.3s ease;                      /* transações suaveis ao passar o mause */
+}
+
+.cta:hover {
+    background-color: #f04e23;                                 /* Muda de cor com mouse em cima */
+}
+
+
+/* Parte de "nossos serviços" */
+
+
+.services {
+    background-color: #ffffffab;                 /* Cor de fundo */
+    padding: 3rem 1rem;                          /* espaçamentos */
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;                                  /* estilo do texto de h2 */
+    margin-bottom: 2rem;
+    color: #222;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;                                   /* Permite que itens em .services-container quebrem linhas em telas menores.*/
+}
+
+.service-item {
+    cursor: pointer;
+    background-color: #f7c200;                                                  /* Define a cor de fundo */
+    padding: 1.5rem;                         
+    border-radius: 10px;
+    max-width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);                                    /* Adiciona sombra de profundidade*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);                                                    /* Move o item ligeiramente para cima ao passar o mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {                                                                      /* estilo do texto de h3 */       
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.service-item p {
+    font-size: 1rem;
+}
+
+
+/* Imagens na parte de nossos serviços */
+
+
+
+.service-image {
+    width: 100%;                                                  /* Faz com que a imagem ocupe 100% da largura disponível dentro do seu container */
+    height: auto;                          /* Mantém as proporções originais da imagem enquanto ajusta a altura de acordo com a largura definida*/
+    border-radius: 10px;                      /*Arredonda os cantos da imagem, dando um aspecto mais suave e esteticamente agradável*/
+    margin-bottom: 1rem;                                  /* espaço na imagem para nao pegar no titulo*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);                /* Aplica uma sombra discreta na imagem para criar um efeito de profundidade */
+    transition: transform 0.3s ease;        /* Configura uma transição suave para a propriedade transform, que será ativada ao passar o mouse sobre a imagem*/      
+}
+
+.service-image:hover {
+    transform: scale(1.05);                     /* Aumenta levemente o tamanho da imagem (5% maior) ao passar o mouse, criando um efeito de zoom*/
+}
+
+
+
+
+
+/* Parte deo sobre nós*/
+
+
+.about {
+    background-color: #f04e23;                 /* cor de fundo */
+    color: #ffffff;                                    /* cor do texto */
+    padding: 3rem 1rem;                              /* Adiciona espaçamento interno e centraliza o conteúdo. */
+    text-align: center;
+}
+
+.about h2 {                                            /* estilização do titulo e texto */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+
+/* Parte do contato*/
+
+.contact {
+    background-color: #ececec;                       /* cor de fundo */
+    padding: 3rem 1rem;                            /* espaçamento interno e centralizar */
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;                                  /* estilizando fonte e espaçamento do titulo */
+    margin-bottom: 2rem;
+}
+
+.endereco {
+    background-color: #4d1b0e;                 /* cor de fundo */
+    color: #fff;                                    /* cor do texto */
+    padding: 2rem 1rem;                              /* Adiciona espaçamento interno e centraliza o conteúdo. */
+    text-align: center;
+}
+
+.endereco h2 {                                            /* estilização do titulo e texto */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.endereco p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+
+
+
+/* estilizando o formulario onde colocamos os dados */
+
+.contact form {                                            
+    display: flex;                               /* Define o formulário como um container flexível, permitindo alinhar seus elementos e botoes */
+    flex-direction: column;                        /* Organiza os elementos do formulário em uma coluna, empilhando-os verticalmente*/
+    gap: 1.5rem;                             /* espaçamento entre elementos*/
+    max-width: 500px;              /* Limita a largura máxima do formulário para mantê-lo organizado e legível, mesmo em telas maiores*/
+    margin: 0 auto;                      /* centraliza horizontalmente */
+}
+
+.contact input, .contact textarea { 
+    padding: 0.8rem;                                       /*Adiciona espaçamento interno para tornar os campos confortáveis para digitação*/
+    border: 1px solid #0000005b;                                /* Define uma borda cinza clara*/
+    border-radius: 5px;                                           /* bordas arredondadas*/
+    font-size: 1rem;
+    transition: border-color 0.3s ease;                    /* Adiciona uma transição suave para mudanças na cor da borda */        
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: #f04e23;             /* Ao clicar ou focar em um campo, a cor da borda muda para um vermelho vibrante, destacando o campo ativo*/
+}
+
+
+/* Botão enviar */
+
+.contact .submit {
+    background-color: #f04e23;
+    color: #ffffff8c;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;                                               /*Adicionam suavidade e realce visual*/
+    cursor: pointer;                                           /* Exibe o ponteiro de mão ao passar o mouse sobre o botão, indicando interatividade */
+    font-size: 1rem;
+    transition: background-color 0.3s ease;                             /* Transições suaves no foco ou passagem do mouse*/
+}
+
+.contact .submit:hover {
+    background-color: #222;                                                /* mudança de cor ao passar mouse no "enviar" */
+}
+
+
+
+/* Estilo da seção de Produtos */
+#produtos {
+    padding: 40px 50px;
+    background-color: #ffffffce; /* Fundo claro e moderno */
+    border-radius: 8px;
+    max-width: 1600px; /* Essa parte é o espacamento dos produtos , na horizontal */
+    margin: 40px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#produtos h2 {
+    font-size: 28px;
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grade para organizar os produtos */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout responsivo */
+    gap: 20px;
+}
+
+/* Estilo dos cards de produto */
+.produto-card {
+    background-color: #ffffff69;
+    border: 1px solid #e2e8f0; /* Borda suave */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto-card h3 {
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.produto-card p {
+    font-size: 14px;
+    color: #4a5568;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+/* Efeitos de hover */
+.produto-card:hover {
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+/* Responsividade adicional */
+@media (max-width: 768px) {
+    #produtos {
+        padding: 20px;
+    }
+
+    .produto-card {
+        padding: 15px;
+    }
+}
+
+
+
+/* rodapé*/
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* ESTILO DO SCRIPT*/
+
+#calculo {
+    display: flex;                /* Ativa o Flexbox */
+    flex-direction: column;       /* Organiza os elementos em coluna */
+    justify-content: center;      /* Centraliza verticalmente */
+    align-items: center;          /* Centraliza horizontalmente */
+    padding: 20px;                /* Espaçamento interno */
+    background-color: #f9f9f9;    /* Cor de fundo */
+    border: 1px solid #ddd;       /* Borda */
+    border-radius: 8px;           /* Cantos arredondados */
+    margin: 20px auto;            /* Centraliza horizontalmente */
+    max-width: 500px;             /* Limita a largura */
+    text-align: center;           /* Centraliza texto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#calculo form {
+    display: flex;                /* Ativa o Flexbox dentro do formulário */
+    flex-direction: column;       /* Organiza os campos em uma coluna */
+    gap: 10px;                    /* Espaçamento entre os campos */
+    width: 100%;                  /* Garante que o formulário ocupe toda a largura */
+    align-items: center;          /* Centraliza os itens horizontalmente */
+}
+
+
+
+
+#calculo h2 {
+    margin-bottom: 15px;                            /* Estilizando o titulo "simule seu aluguel*/
+    font-size: 20px;
+    color: #222;
+}
+
+
+
+#calculo input, #calculo select, #calculo button {          /* Estilizando os botoes e input */
+    padding: 10px;                                      /* espaçamento entre as bordas*/        
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 98%;                                /* aqui é o tamanho da largura dos elementos*/
+}
+
+#calculo button {                                   /*estilo do botão*/
+    background-color: #f04e23;
+    color: #fff;
+    cursor: pointer;                                 /* altera o mouse para uma maozinha*/
+    transition: background-color 0.3s;                /* altera a cor rapidao ao passar mouse*/
+}
+
+#calculo button:hover {
+    background-color: #d03d1b;
+}
+
+#resultado {                                        /* estilo do resultado*/
+    margin-top: 15px;
+    font-size: 18px;
+    color: #2d3748;
+}
+
+
+
+
+
+
+
