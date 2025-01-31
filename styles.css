@@ -43,8 +43,8 @@ body {
     background-size: contain; /* Ajusta o tamanho proporcional */
     background-repeat: no-repeat; /* Evita repetição da imagem */
     background-position: center; /* Centraliza a imagem */
-    width: 150px; /* Ajuste a largura conforme necessário */
-    height: 50px; /* Ajuste a altura conforme necessário */
+    width: 200px; /* Ajuste a largura conforme necessário */
+    height: 100px; /* Ajuste a altura conforme necessário */
     text-indent: -9999px; /* Esconde o texto, se ainda estiver lá */
     overflow: hidden; /* Garante que nada extra apareça */
 }
