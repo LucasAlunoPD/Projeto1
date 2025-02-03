@@ -16,12 +16,11 @@ body {
 .header {
     background-color: #222;  /* cor do fundo */
     color: #fff;             /* cor do texto*/
-    padding: 1rem 0;           /* espaçamento interno*/
     position: sticky;         /* Cabeçalho gruda e faz rolar junto para baixo da pagina*/
     top: 0;  
     z-index: 1000;             /* Garante que cabeçalho fique sobre elementos */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);         /* adiciona sombra leve abaixo*/ 
-    padding: 30px 0;
+    padding: 25px 0;
 }
 
 
